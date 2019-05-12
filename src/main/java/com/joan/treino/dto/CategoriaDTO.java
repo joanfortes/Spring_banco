@@ -2,12 +2,17 @@ package com.joan.treino.dto;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.joan.treino.domain.Categoria;
 
 public class CategoriaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 		private Integer id;
+		
+		@javax.validation.constraints.NotEmpty(message= "preencimento obrigatorio")
+		@Length(min=5, max = 80, message = "O tamanho deve ser entre 5 a 80 caracteres")
 		private String nome;
 		
 		public CategoriaDTO() {
