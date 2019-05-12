@@ -3,10 +3,12 @@ package com.joan.treino.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.joan.treino.domain.Categoria;
 import com.joan.treino.repositories.CategoriaRepository;
+import com.joan.treino.services.execptions.DataIntegrityException;
 import com.joan.treino.services.execptions.ObjectNotFoundException;
 
 @Service
@@ -28,4 +30,14 @@ public class CategoriaService {
 		find(obj.getId());
 		return repo.save(obj);
 	}
+	
+	public void delete(Integer id) {
+		find(id);
+		try {
+		repo.deleteById(id);
+		}
+		catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("nao é possivel excluir uma categoria que possui produtos");
+		}
+	}	
 }
