@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.joan.treino.domain.Cliente;
-import com.joan.treino.domain.Cliente;
 import com.joan.treino.dto.ClienteDTO;
 import com.joan.treino.repositories.ClienteRepository;
 import com.joan.treino.services.execptions.DataIntegrityException;
