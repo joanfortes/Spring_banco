@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.joan.treino.domain.Produto;
-import com.joan.treino.dto.CategoriaDTO;
 import com.joan.treino.dto.ProdutoDTO;
 import com.joan.treino.resources.utils.URL;
 import com.joan.treino.services.ProdutoService;
